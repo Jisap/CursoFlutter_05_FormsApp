@@ -1,4 +1,5 @@
-import 'package:forms_app/presentation/screens/home_screen.dart';
+
+import 'package:forms_app/presentation/screens/screens.dart';
 import 'package:go_router/go_router.dart';
 
 
@@ -13,7 +14,7 @@ final appRouter = GoRouter(
 
     GoRoute(
       path: '/cubits',
-      builder: (context, state) => const HomeScreen(),
+      builder: (context, state) => const CubitCounterScreen(),
     ),
 
   ]
