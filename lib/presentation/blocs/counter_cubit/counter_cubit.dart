@@ -6,7 +6,7 @@ part 'counter_state.dart';
 class CounterCubit extends Cubit<CounterState> {          // Manejador del estado (parecido a un provider)
   CounterCubit() : super(CounterState( counter: 5 ));
 
-  void increaseBY( int value ) {  // Método que emite un nuevo estado
+  void increaseBy( int value ) {  // Método que emite un nuevo estado
     emit( state.copyWith(
       counter: state.counter + value,
       transactionCount: state.transactionCount + 1,

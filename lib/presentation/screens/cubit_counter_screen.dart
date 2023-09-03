@@ -22,14 +22,21 @@ class _CubitCounterView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final counterState = context.watch<CounterCubit>().state; // Carga el estado y escucha los valores nuevos que emite.
+    final counterState = context.watch<CounterCubit>().state; // Carga el estado y escucha los valores nuevos que emite -> redibuja el widget
+    //final counterStRead = context.read<CounterCubit>();
+
+    void increaseCounterBy( BuildContext context, [int value = 1]){
+      context.read<CounterCubit>().increaseBy(value);
+    }
 
     return Scaffold(
       appBar: AppBar(
         title: Text('Cubit Counter: ${ counterState.transactionCount }'), // Muestra el número de subidas del counter
         actions: [
           IconButton(
-              onPressed: () => {}, icon: const Icon(Icons.refresh_outlined))
+              onPressed: () => {context.read<CounterCubit>().reset()}, // Método de reset del state
+              icon: const Icon(Icons.refresh_outlined)
+          )
         ],
       ),
       body: Center(
@@ -43,17 +50,20 @@ class _CubitCounterView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
-              heroTag: '1', child: const Text('+3'), onPressed: () => {}),
+              heroTag: '1', child: const Text('3'), onPressed: () => {increaseCounterBy(context, 3)}
+          ),
           const SizedBox(
             height: 15,
           ),
           FloatingActionButton(
-              heroTag: '2', child: const Text('+2'), onPressed: () => {}),
+              heroTag: '2', child: const Text('+2'), onPressed: () => {increaseCounterBy(context, 2)}
+          ),
           const SizedBox(
             height: 15,
           ),
           FloatingActionButton(
-              heroTag: '3', child: const Text('+1'), onPressed: () => {}),
+              heroTag: '3', child: const Text('+1'), onPressed: () => {increaseCounterBy(context, 2)}
+          ),
         ],
       ),
     );
