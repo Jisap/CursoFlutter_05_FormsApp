@@ -13,7 +13,7 @@ class CounterCubit extends Cubit<CounterState> {          // Manejador del estad
     ));
   }
 
-  void reset() {
+  void reset() {                  // Método que resetea el estado
     emit(state.copyWith(
       counter: 0,
     ));
