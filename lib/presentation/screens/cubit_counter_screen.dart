@@ -31,6 +31,9 @@ class _CubitCounterView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        //title: context.select(( CounterCubit value )){
+        //  return Text('Cubit Counter: ${ value.state.transactionCount })  
+        //}
         title: Text('Cubit Counter: ${ counterState.transactionCount }'), // Muestra el número de subidas del counter
         actions: [
           IconButton(
