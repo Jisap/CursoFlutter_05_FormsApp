@@ -23,7 +23,7 @@ class _CubitCounterView extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final counterState = context.watch<CounterCubit>().state; // Carga el estado y escucha los valores nuevos que emite -> redibuja el widget
-    //final counterStRead = context.read<CounterCubit>();
+    
 
     void increaseCounterBy( BuildContext context, [int value = 1]){
       context.read<CounterCubit>().increaseBy(value);
