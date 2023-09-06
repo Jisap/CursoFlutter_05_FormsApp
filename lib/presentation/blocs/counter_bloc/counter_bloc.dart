@@ -9,6 +9,8 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> { // CounterBloc trab
   CounterBloc() : super(const CounterState()) { // Constructor que inicializa el estado
 
     on<CounterIncreased>( _onCounterIncreased );  // Este Bloc(estado) escucha el evento CounterIncreased y en respuesta emite un nuevo state
+  
+    on<CounterReset>( _onCounterReset );
   }
 
   void _onCounterIncreased( CounterIncreased event, Emitter<CounterState> emit ){  
@@ -16,6 +18,12 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> { // CounterBloc trab
       counter: state.counter + event.value,
       transactionCount: state.transactionCount + 1,
     )); 
+  }
+
+  void _onCounterReset(CounterReset event, Emitter<CounterState> emit) {
+    emit(state.copyWith(
+      counter: 0,
+    ));
   }
 
 }
