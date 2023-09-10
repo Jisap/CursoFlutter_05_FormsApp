@@ -51,6 +51,8 @@ class _RegisterForm extends StatelessWidget {
         children: [
 
           CustomTextFormField(),
+          SizedBox(height: 10,),
+          CustomTextFormField(),
 
           const SizedBox(height: 20),
 

@@ -6,6 +6,13 @@ class CustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final colors = Theme.of(context).colorScheme;
+
+    final border = OutlineInputBorder(
+      borderRadius: BorderRadius.circular(40)
+    );
+
     return TextFormField(
       onChanged:(value) {
         print('value; $value');
@@ -18,7 +25,8 @@ class CustomTextFormField extends StatelessWidget {
         return null;
       },
       decoration: InputDecoration(
-      
+        enabledBorder: border,
+        focusedBorder: border.copyWith( borderSide: BorderSide( color: colors.primary ))
       ),
     );
   }
