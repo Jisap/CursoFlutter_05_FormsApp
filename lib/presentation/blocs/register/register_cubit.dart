@@ -10,7 +10,7 @@ class RegisterCubit extends Cubit<RegisterFormState> {  // Manejador del estado 
     print('Cubit Submit: $state');
   }
 
-  void usernameChanged(String value){
+  void usernameChanged(String value){ // Métodos que cambian el estado (su copia)
     emit(
       state.copyWith(
         username: value

@@ -32,7 +32,7 @@ class RegisterFormState extends Equatable { // Estado del formulario
   );
 
   @override
-  List<Object> get props => [ formStatus, username, email, password ]; // Permite a equatable cuando el estado a cambiado en base a estas props
+  List<Object> get props => [ formStatus, username, email, password ]; // Permite saber a equatable cuando el estado a cambiado en base a estas props
 }
 
 
