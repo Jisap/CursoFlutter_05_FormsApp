@@ -9,14 +9,14 @@ class RegisterFormState extends Equatable { // Estado del formulario
   final bool isValid;
   final Username username;
   final String email;
-  final String password;
+  final Password password;
 
   const RegisterFormState({   // Valores por defecto 
     this.formStatus = FormStatus.invalid, 
     this.isValid = false,
     this.username = const Username.pure(), // Es un tipo de username sin modificar 
     this.email = '', 
-    this.password = '',
+    this.password = const Password.pure(),
   });
 
   RegisterFormState copyWith({ // Estado. Se trabaja con copias de la instancia del estado
@@ -24,7 +24,7 @@ class RegisterFormState extends Equatable { // Estado del formulario
     bool? isValid,
     Username? username,
     String? email,
-    String? password,
+    Password? password,
 
   }) => RegisterFormState(
 
