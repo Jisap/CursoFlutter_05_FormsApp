@@ -8,14 +8,14 @@ class RegisterFormState extends Equatable { // Estado del formulario
   final FormStatus formStatus; // Valores que se reciben según inputs definidos por FormZ
   final bool isValid;
   final Username username;
-  final String email;
+  final Email email;
   final Password password;
 
   const RegisterFormState({   // Valores por defecto 
     this.formStatus = FormStatus.invalid, 
     this.isValid = false,
     this.username = const Username.pure(), // Es un tipo de username sin modificar 
-    this.email = '', 
+    this.email = const Email.pure(), 
     this.password = const Password.pure(),
   });
 
@@ -23,7 +23,7 @@ class RegisterFormState extends Equatable { // Estado del formulario
     FormStatus? formStatus,
     bool? isValid,
     Username? username,
-    String? email,
+    Email? email,
     Password? password,
 
   }) => RegisterFormState(
